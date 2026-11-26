@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>APP ESTOQUE v1.0 — EMBUTIDOS</title>
+<title>APP ESTOQUE v1.3 — EMBUTIDOS</title>
 <style>
   :root{ --fundo:#f4f4f2; --cartao:#fff; --tinta:#1a1a1a; --cinza:#666;
          --borda:#d8d8d8; --acento:#1F4E79; }
@@ -43,6 +43,11 @@
   .lote .q{width:56px;}
   .lote .d{width:88px;}
   .lote .x{border:0; background:none; color:#c00; font-weight:bold; padding:2px 6px;}
+  .lote.ruim{border:2px solid #C00000; background:#FFECEC; flex-wrap:wrap;}
+  .lote.ruim .d{border-color:#C00000; color:#C00000; font-weight:bold;}
+  .lote .msg{display:none; width:100%; font-size:12px; color:#C00000; line-height:1.3;}
+  .lote.ruim .msg{display:block;}
+  .lote .msg button{margin-top:4px; padding:5px 9px; font-size:12px; background:#1F4E79; color:#fff;}
   .chip{display:inline-block; width:12px; height:12px; border-radius:3px;
         margin-left:2px; vertical-align:middle;}
   .rodape{position:fixed; bottom:0; left:0; right:0; background:#fff;
@@ -59,7 +64,7 @@
 </div>
 
 <header>
-  <h1>APP ESTOQUE <span style="color:#8fc1ff">v1.0</span></h1>
+  <h1>APP ESTOQUE <span style="color:#8fc1ff">v1.3</span></h1>
   <div class="sub">Digitação de estoque · EMBUTIDOS · piloto (impressão oficial continua no Excel)</div>
 </header>
 
@@ -70,10 +75,12 @@
     <option>S JUDAS</option><option>C NOVA</option><option>V MARTINS</option>
     <option>C NOVA II</option><option>CAMPAL</option><option>L STARRET</option>
   </select></label>
-  <label>Semana<br><input id="semana" maxlength="4" inputmode="numeric" placeholder="1611"></label>
+  <label>Semana (automática)<br><input id="semana" maxlength="4" readonly tabindex="-1"
+    title="Preenchida sozinha com a data de hoje" style="background:#eee; color:#444; font-weight:bold; cursor:not-allowed"></label>
   <button class="btn-s" onclick="carregarModelo()">📂 Modelo da semana (JSON)</button>
   <button class="btn-s" onclick="document.getElementById('abrirJson').click()">📂 Abrir meu JSON</button>
   <button class="btn-s" onclick="limparTudo()">🧹 Limpar</button>
+  <button class="btn-s" id="btnRecuperar" style="display:none" onclick="recuperarUltimoEnvio()">↩ Recuperar último envio</button>
   <input type="file" id="abrirJson" accept=".json,.txt" style="display:none" onchange="abrirJson(event)">
   <input type="file" id="abrirModelo" accept=".json" style="display:none" onchange="lerModelo(event)">
 </div>
@@ -88,13 +95,13 @@
 </div>
 
 <script>
-const VERSAO_APP = "v1.0";
+const VERSAO_APP = "v1.3";
 const CATEGORIA = "EMBUTIDOS";
 // Fotografia do MODELO oficial EMB (8 secoes/60 itens) de 16/11.
 // Se o cadastro-mestre mudar, carregue o MODELO_APP.json da semana.
 const MODELO_EMBUTIDO = [{"grupo": "LINGUIÇA", "itens": ["LINGUIÇA AURORA", "LINGUIÇA FRIELLA", "LINGUIÇA NUTRIBEN", "LINGUIÇA PERDIGÃO NA BRASA", "LINGUIÇA REZENDE", "LINGUIÇA SADIA", "LINGUIÇA SADIA SUINA CHURRASCO", "LINGUIÇA SEARA", "LINGUIÇA SEARA SUINA/CHURRASCO"]}, {"grupo": "CALABRESA", "itens": ["LING CALABRESA AURORA", "LING CALABRESA DONALLI", "LING CALABRESA FRIELA", "LING CALABRESA PERDIGÃO", "LING CALABRESA SADIA", "LING CALABRESA SEARA"]}, {"grupo": "MORTADELA", "itens": ["MORT AURORA", "MORT AURORELLA", "MORT DOM MATEO", "MORT MARBA TRAD", "MORT PERDIGÃO OURO", "MORT PERDIGÃO TRAD", "MORT REZENDE TRAD", "MORT SADIA DEF", "MORT SEARA DEF", "MORT SEARA TRAD"]}, {"grupo": "PRESUNTO", "itens": ["PRESUNTO AURORA", "PRESUNTO PERDIGÃO", "PRESUNTO REZENDE", "PRESUNTO SADIA", "PRESUNTO SEARA"]}, {"grupo": "APRESUNTADO", "itens": ["APRESUNTADO AURORA", "APRESUNTADO PERDIGÃO", "APRESUNTADO REZENDE", "APRESUNTADO SADIA", "APRESUNTADO SEARA"]}, {"grupo": "SALSICHA", "itens": ["SALSICHA AURORA", "SALSICHA DONALI", "SALSICHA NOBRE", "SALSICHA PERDIGAO", "SALSICHA REZENDE", "SALSICHA SADIA", "SALSICHA SEARA", "SALSICHA SEARA S/ CORANTE"]}, {"grupo": "BACON", "itens": ["BACON AURORA", "BACON FRICASA", "BACON PERDIGAO", "BACON QUALIVIP", "BACON SADIA", "BACON SEARA"]}, {"grupo": "EMBUTIDOS", "itens": ["LOMBO DEF AURORA", "PEITO PERU SADIA", "ROSBIFE", "SALAME AURORA", "SALAME AURORA FINO", "SALAME NOBRE", "SALAME PERDIGÃO", "SALAME SADIA ITALIANO", "PEITO DE FRANGO SADIA", "QUEIJO PARMESSAO RALADO PCT 1KG", "QUEIJO PROVOLONE P/FATIAR"]}];
 let secoes = MODELO_EMBUTIDO;
-let origemModelo = "fotografia embutida (16/11)";
+let origemModelo = "cadastro de 16/11";
 
 // ---------- utilidades ----------
 const $ = s => document.querySelector(s);
@@ -118,6 +125,61 @@ function corDaValidade(txt){
   if(delta < 0) return "#C00000";               // vencido
   return CORES[Math.min(delta,3)];
 }
+// ---------- v1.1: TRAVA DE VALIDADE ----------
+// Produto vencido ha mais de 15 dias nao existe na loja (e descartado).
+// Erro comum na virada do ano: digitar 12/01/26 quando o certo e 12/01/27.
+const TOLERANCIA_VENCIDO_DIAS = 15;
+function hojeZero(){ const h=new Date(); return new Date(h.getFullYear(),h.getMonth(),h.getDate()); }
+const fmt = d => String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0")+"/"+String(d.getFullYear()).slice(2);
+function checarData(txt){
+  // devolve null se OK; senao {motivo, sugestao}
+  const m = (txt||"").match(/^(\d{2})\/(\d{2})\/(\d{2})$/);
+  if(!m) return null;                       // incompleta: ainda digitando
+  const dia=+m[1], mes=+m[2], ano=2000+(+m[3]);
+  const d = new Date(ano, mes-1, dia);
+  if(mes<1 || mes>12 || d.getDate()!==dia || d.getMonth()!==mes-1)
+    return {motivo:"Data que não existe no calendário.", sugestao:null};
+  const limite = hojeZero(); limite.setDate(limite.getDate()-TOLERANCIA_VENCIDO_DIAS);
+  if(d >= limite) return null;
+  const dias = Math.round((hojeZero()-d)/86400000);
+  let sug = null;
+  // so sugere ano a mais quando o "vencimento" ficou muito para tras
+  // (cara de ano digitado errado); vencido recente = conferir na embalagem
+  for(let k=1;k<=2 && !sug && dias>120;k++){
+    const s2 = new Date(ano+k, mes-1, dia);
+    if(s2 >= limite && s2.getDate()===dia) sug = fmt(s2);
+  }
+  return {motivo:"Vencido há " + dias + " dias — produto vencido é descartado, não entra no estoque.",
+          sugestao:sug};
+}
+function marcarData(inp){
+  const lote = inp.parentElement, msg = lote.querySelector(".msg");
+  const r = inp.value.length===8 ? checarData(inp.value) : null;
+  lote.classList.toggle("ruim", !!r);
+  if(!r){ msg.innerHTML=""; return; }
+  msg.innerHTML = "⛔ <b>" + inp.value + "</b>: " + r.motivo +
+    (r.sugestao ? `<br>Você quis dizer <b>${r.sugestao}</b>?<br>
+      <button onclick="corrigirData(this,'${r.sugestao}')">✔ Corrigir para ${r.sugestao}</button>`
+      : "<br>Confira a data na embalagem e digite de novo.");
+}
+function corrigirData(btn, nova){
+  const inp = btn.closest(".lote").querySelector(".d");
+  inp.value = nova; mascaraData(inp);
+}
+function lotesComDataRuim(){
+  const ruins = [];
+  document.querySelectorAll(".lote").forEach(l=>{
+    const q=l.querySelector(".q").value.trim(), d=l.querySelector(".d").value.trim();
+    if(q==="" || d==="") return;
+    const r = d.length===8 ? checarData(d) : {motivo:"Data incompleta (use dd/mm/aa).", sugestao:null};
+    if(r){
+      const nome = l.closest(".item").querySelector(".nome").textContent;
+      ruins.push({lote:l, txt:"• "+nome+": "+d+(r.sugestao?"  → quis dizer "+r.sugestao+"?":"  ("+r.motivo+")")});
+    }
+  });
+  return ruins;
+}
+
 function mascaraData(inp){
   let v = inp.value.replace(/\D/g,"").slice(0,6);
   if(v.length>4) v = v.slice(0,2)+"/"+v.slice(2,4)+"/"+v.slice(4);
@@ -127,6 +189,7 @@ function mascaraData(inp){
   const cor = v.length===8 ? corDaValidade(v) : null;
   chip.style.background = cor || "transparent";
   chip.title = cor ? "" : "";
+  marcarData(inp);
   rascunho();
 }
 
@@ -153,10 +216,9 @@ function montar(){
   });
   atualizaContador();
   $("#avisoModelo").style.display = "block";
-  $("#avisoModelo").innerHTML = "Modelo em uso: <b>" + origemModelo + "</b> — " +
+  $("#avisoModelo").innerHTML = "📋 Lista de produtos: <b>" + origemModelo + "</b> — " +
     secoes.length + " seções / " +
-    secoes.reduce((a,s)=>a+s.itens.length,0) + " itens. Se o cadastro-mestre " +
-    "mudou esta semana, carregue o <b>MODELO_APP.json</b> antes de digitar.";
+    secoes.reduce((a,s)=>a+s.itens.length,0) + " produtos.";
 }
 function addLote(si, ii, qtd, data){
   const zona = document.querySelector(`.lotes[data-g="${si}"][data-i="${ii}"]`);
@@ -167,7 +229,8 @@ function addLote(si, ii, qtd, data){
       <input class="d" inputmode="numeric" placeholder="dd/mm/aa" maxlength="8"
         value="${data||""}" oninput="mascaraData(this)">
       <span class="chip"></span>
-      <button class="x" title="remover lote" onclick="this.parentElement.remove();rascunho();atualizaContador()">×</button>`;
+      <button class="x" title="remover lote" onclick="this.parentElement.remove();rascunho();atualizaContador()">×</button>
+      <div class="msg"></div>`;
   zona.appendChild(d);
   if(data) mascaraData(d.querySelector(".d"));
   atualizaContador();
@@ -191,7 +254,6 @@ function restaurar(){
   if(!r) return;
   try{
     const d = JSON.parse(r);
-    if(d.semana && !$("#semana").value) $("#semana").value = d.semana;
     (d.itens||[]).forEach(it=>{
       const si = secoes.findIndex(s=>s.grupo===it.grupo);
       if(si<0) return;
@@ -228,9 +290,20 @@ function validar(){
     alert("Escolha SUA LOJA primeiro — é ela que nomeia o arquivo.");
     $("#loja").focus(); return null;
   }
+  semanaDeHoje();
   if(!/^\d{4}$/.test($("#semana").value.trim())){
     alert("Preencha a SEMANA com 4 números (ex.: 1611 = dia 16, mês 11).");
     $("#semana").focus(); return null;
+  }
+  const ruins = lotesComDataRuim();
+  if(ruins.length){
+    const sec = ruins[0].lote.closest(".sec-c"); if(sec) sec.style.display = "block";
+    ruins[0].lote.scrollIntoView({behavior:"smooth", block:"center"});
+    alert("⛔ Não dá para enviar: " + ruins.length + " data(s) de validade com problema.\n\n" +
+          ruins.slice(0,8).map(r=>r.txt).join("\n") + (ruins.length>8 ? "\n• ..." : "") +
+          "\n\nProduto vencido há mais de " + TOLERANCIA_VENCIDO_DIAS +
+          " dias não fica na loja. Se foi erro no ano, toque em ✔ Corrigir em cada lote marcado de vermelho.");
+    return null;
   }
   const dados = coletar();
   if(!dados.itens.length){ alert("Nada digitado ainda — não vou salvar vazio."); return null; }
@@ -245,13 +318,49 @@ async function enviar(){
   const base = nomeBase(dados), texto = JSON.stringify(dados, null, 1);
   const arq = new File([texto], base + ".txt", {type:"text/plain"});
   if(ehCelular() && navigator.canShare && navigator.canShare({files:[arq]})){
-    try{ await navigator.share({files:[arq], title:base}); return; }
+    try{ await navigator.share({files:[arq], title:base}); limparAposEnvio(dados); return; }
     catch(e){ if(e.name==="AbortError") return; }
   }
-  await salvar(dados, true);
+  if(await salvar(dados, true)) limparAposEnvio(dados);
+}
+// v1.2: depois de ENVIAR, limpa os campos para a proxima digitacao.
+// Guarda uma copia do ultimo envio no aparelho (botao "Recuperar").
+function limparAposEnvio(dados){
+  localStorage.setItem("app-estoque-ultimo-envio", JSON.stringify(dados));
+  localStorage.removeItem("app-estoque-rascunho");
+  document.querySelectorAll(".lote").forEach(l=>l.remove());
+  atualizaContador(); mostrarRecuperar();
+  window.scrollTo(0,0);
+  alert("✅ Enviado! Os campos foram limpos para uma nova digitação.\n\n" +
+        "Se o envio não chegou, toque em ↩ Recuperar último envio.");
+}
+function mostrarRecuperar(){
+  $("#btnRecuperar").style.display =
+    localStorage.getItem("app-estoque-ultimo-envio") ? "" : "none";
+}
+function recuperarUltimoEnvio(){
+  const r = localStorage.getItem("app-estoque-ultimo-envio"); if(!r) return;
+  if(document.querySelectorAll(".lote .q").length &&
+     !confirm("Isso troca o que está digitado agora pelo último envio. Continuar?")) return;
+  try{
+    const d = JSON.parse(r);
+    document.querySelectorAll(".lote").forEach(l=>l.remove());
+    if(d.loja) $("#loja").value = d.loja;
+    (d.itens||[]).forEach(it=>{
+      const si = secoes.findIndex(s=>s.grupo===it.grupo); if(si<0) return;
+      const ii = secoes[si].itens.indexOf(it.produto); if(ii<0) return;
+      (it.lotes||[]).forEach(l=>addLote(si,ii,String(l.qtd),l.validade||""));
+    });
+    rascunho();
+    alert("Último envio recuperado (" + (d.itens||[]).length + " produtos). Pode enviar de novo.");
+  }catch(e){ alert("Não consegui recuperar."); }
+}
+function semanaDeHoje(){
+  const h = new Date();
+  $("#semana").value = String(h.getDate()).padStart(2,"0") + String(h.getMonth()+1).padStart(2,"0");
 }
 async function salvar(dadosProntos, veioDoEnviar){
-  const dados = dadosProntos || validar(); if(!dados) return;
+  const dados = dadosProntos || validar(); if(!dados) return false;
   const nome = nomeBase(dados) + ".json", texto = JSON.stringify(dados, null, 1);
   const dica = "Agora anexe este arquivo no WhatsApp (📎 → Documento) ou " +
                "WhatsApp Web e envie para o escritório. Ele vai na pasta da semana (ex.: 1611\\EMB).";
@@ -260,14 +369,15 @@ async function salvar(dadosProntos, veioDoEnviar){
       const h = await showSaveFilePicker({suggestedName:nome,
         types:[{description:"JSON", accept:{"application/json":[".json"]}}]});
       const w = await h.createWritable(); await w.write(texto); await w.close();
-      alert("Salvo: " + h.name + "\n\n" + dica); return;
-    }catch(e){ if(e.name==="AbortError") return; }
+      alert("Salvo: " + h.name + "\n\n" + dica); return true;
+    }catch(e){ if(e.name==="AbortError") return false; }
   }
   const a = document.createElement("a");              // celular: download
   a.href = URL.createObjectURL(new Blob([texto],{type:"application/json"}));
   a.download = nome; a.click();
   alert((veioDoEnviar && ehCelular() ? "Este aparelho não abriu o compartilhar direto.\n" : "") +
         "Baixei " + nome + ".\n\n" + dica);
+  return true;
 }
 function abrirJson(ev){
   const f = ev.target.files[0]; if(!f) return;
@@ -276,7 +386,6 @@ function abrirJson(ev){
       const d = JSON.parse(r.result);
       if(d.app!=="app-estoque"){ alert("Este arquivo não é do APP ESTOQUE."); return; }
       if(d.loja) $("#loja").value = d.loja;
-      $("#semana").value = d.semana || "";
       (d.itens||[]).forEach(it=>{
         const si = secoes.findIndex(s=>s.grupo===it.grupo);
         if(si<0) return;
@@ -296,7 +405,7 @@ function lerModelo(ev){
   r.onload = ()=>{ try{
       const d = JSON.parse(r.result);
       if(!d.secoes || !Array.isArray(d.secoes)){ throw 0; }
-      secoes = d.secoes; origemModelo = f.name;
+      secoes = d.secoes; origemModelo = "arquivo " + f.name;
       montar(); restaurar();
       alert("Modelo carregado: "+f.name);
     }catch(e){ alert("Este arquivo não é um MODELO_APP.json válido."); } };
@@ -311,10 +420,9 @@ function limparTudo(){
 }
 
 // semana padrao = hoje (ddmm)
-(function(){ const h=new Date();
-  $("#semana").value = String(h.getDate()).padStart(2,"0") + String(h.getMonth()+1).padStart(2,"0");
-  $("#semana").addEventListener("input", ()=>{ document.querySelectorAll(".lote .d")
-    .forEach(i=>{ if(i.value.length===8) mascaraData(i); }); rascunho(); });
+(function(){
+  semanaDeHoje();                     // v1.2: automatica, a loja nao escolhe
+  mostrarRecuperar();
   const lj = localStorage.getItem("app-estoque-loja");
   if(lj) $("#loja").value = lj;
   $("#loja").addEventListener("change", ()=>
@@ -325,12 +433,13 @@ function limparTudo(){
     fetch("MODELO_APP.json?v=" + Date.now(), {cache:"no-store"})
       .then(r => r.ok ? r.json() : null)
       .then(d => { if(d && Array.isArray(d.secoes) && d.secoes.length){
-          secoes = d.secoes; origemModelo = "modelo do site" +
-            (d.exportado_em ? " (" + String(d.exportado_em).slice(0,10) + ")" : "");
+          const ex = String(d.exportado_em||"").match(/^(\d{4})-(\d{2})-(\d{2})/);
+          secoes = d.secoes; origemModelo = "atualizada pelo escritório" +
+            (ex ? " em " + ex[3] + "/" + ex[2] : "");
           montar(); restaurar(); } })
       .catch(()=>{});
   }
 })();
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a60a2c371f59c6c1',t:'MTc5NTcwOTUyNQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a60a2c371f59c6c1',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
