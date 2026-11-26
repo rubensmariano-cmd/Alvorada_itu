@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>APP ESTOQUE v1.2 — EMBUTIDOS</title>
+<title>APP ESTOQUE v1.3 — EMBUTIDOS</title>
 <style>
   :root{ --fundo:#f4f4f2; --cartao:#fff; --tinta:#1a1a1a; --cinza:#666;
          --borda:#d8d8d8; --acento:#1F4E79; }
@@ -64,7 +64,7 @@
 </div>
 
 <header>
-  <h1>APP ESTOQUE <span style="color:#8fc1ff">v1.2</span></h1>
+  <h1>APP ESTOQUE <span style="color:#8fc1ff">v1.3</span></h1>
   <div class="sub">Digitação de estoque · EMBUTIDOS · piloto (impressão oficial continua no Excel)</div>
 </header>
 
@@ -95,13 +95,13 @@
 </div>
 
 <script>
-const VERSAO_APP = "v1.2";
+const VERSAO_APP = "v1.3";
 const CATEGORIA = "EMBUTIDOS";
 // Fotografia do MODELO oficial EMB (8 secoes/60 itens) de 16/11.
 // Se o cadastro-mestre mudar, carregue o MODELO_APP.json da semana.
 const MODELO_EMBUTIDO = [{"grupo": "LINGUIÇA", "itens": ["LINGUIÇA AURORA", "LINGUIÇA FRIELLA", "LINGUIÇA NUTRIBEN", "LINGUIÇA PERDIGÃO NA BRASA", "LINGUIÇA REZENDE", "LINGUIÇA SADIA", "LINGUIÇA SADIA SUINA CHURRASCO", "LINGUIÇA SEARA", "LINGUIÇA SEARA SUINA/CHURRASCO"]}, {"grupo": "CALABRESA", "itens": ["LING CALABRESA AURORA", "LING CALABRESA DONALLI", "LING CALABRESA FRIELA", "LING CALABRESA PERDIGÃO", "LING CALABRESA SADIA", "LING CALABRESA SEARA"]}, {"grupo": "MORTADELA", "itens": ["MORT AURORA", "MORT AURORELLA", "MORT DOM MATEO", "MORT MARBA TRAD", "MORT PERDIGÃO OURO", "MORT PERDIGÃO TRAD", "MORT REZENDE TRAD", "MORT SADIA DEF", "MORT SEARA DEF", "MORT SEARA TRAD"]}, {"grupo": "PRESUNTO", "itens": ["PRESUNTO AURORA", "PRESUNTO PERDIGÃO", "PRESUNTO REZENDE", "PRESUNTO SADIA", "PRESUNTO SEARA"]}, {"grupo": "APRESUNTADO", "itens": ["APRESUNTADO AURORA", "APRESUNTADO PERDIGÃO", "APRESUNTADO REZENDE", "APRESUNTADO SADIA", "APRESUNTADO SEARA"]}, {"grupo": "SALSICHA", "itens": ["SALSICHA AURORA", "SALSICHA DONALI", "SALSICHA NOBRE", "SALSICHA PERDIGAO", "SALSICHA REZENDE", "SALSICHA SADIA", "SALSICHA SEARA", "SALSICHA SEARA S/ CORANTE"]}, {"grupo": "BACON", "itens": ["BACON AURORA", "BACON FRICASA", "BACON PERDIGAO", "BACON QUALIVIP", "BACON SADIA", "BACON SEARA"]}, {"grupo": "EMBUTIDOS", "itens": ["LOMBO DEF AURORA", "PEITO PERU SADIA", "ROSBIFE", "SALAME AURORA", "SALAME AURORA FINO", "SALAME NOBRE", "SALAME PERDIGÃO", "SALAME SADIA ITALIANO", "PEITO DE FRANGO SADIA", "QUEIJO PARMESSAO RALADO PCT 1KG", "QUEIJO PROVOLONE P/FATIAR"]}];
 let secoes = MODELO_EMBUTIDO;
-let origemModelo = "fotografia embutida (16/11)";
+let origemModelo = "cadastro de 16/11";
 
 // ---------- utilidades ----------
 const $ = s => document.querySelector(s);
@@ -216,10 +216,9 @@ function montar(){
   });
   atualizaContador();
   $("#avisoModelo").style.display = "block";
-  $("#avisoModelo").innerHTML = "Modelo em uso: <b>" + origemModelo + "</b> — " +
+  $("#avisoModelo").innerHTML = "📋 Lista de produtos: <b>" + origemModelo + "</b> — " +
     secoes.length + " seções / " +
-    secoes.reduce((a,s)=>a+s.itens.length,0) + " itens. Se o cadastro-mestre " +
-    "mudou esta semana, carregue o <b>MODELO_APP.json</b> antes de digitar.";
+    secoes.reduce((a,s)=>a+s.itens.length,0) + " produtos.";
 }
 function addLote(si, ii, qtd, data){
   const zona = document.querySelector(`.lotes[data-g="${si}"][data-i="${ii}"]`);
@@ -406,7 +405,7 @@ function lerModelo(ev){
   r.onload = ()=>{ try{
       const d = JSON.parse(r.result);
       if(!d.secoes || !Array.isArray(d.secoes)){ throw 0; }
-      secoes = d.secoes; origemModelo = f.name;
+      secoes = d.secoes; origemModelo = "arquivo " + f.name;
       montar(); restaurar();
       alert("Modelo carregado: "+f.name);
     }catch(e){ alert("Este arquivo não é um MODELO_APP.json válido."); } };
@@ -434,12 +433,13 @@ function limparTudo(){
     fetch("MODELO_APP.json?v=" + Date.now(), {cache:"no-store"})
       .then(r => r.ok ? r.json() : null)
       .then(d => { if(d && Array.isArray(d.secoes) && d.secoes.length){
-          secoes = d.secoes; origemModelo = "modelo do site" +
-            (d.exportado_em ? " (" + String(d.exportado_em).slice(0,10) + ")" : "");
+          const ex = String(d.exportado_em||"").match(/^(\d{4})-(\d{2})-(\d{2})/);
+          secoes = d.secoes; origemModelo = "atualizada pelo escritório" +
+            (ex ? " em " + ex[3] + "/" + ex[2] : "");
           montar(); restaurar(); } })
       .catch(()=>{});
   }
 })();
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a60a2c371f59c6c1',t:'MTc5NTcwOTUyNQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a60a2c371f59c6c1',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
