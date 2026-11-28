@@ -1,216 +1,208 @@
 {
  "app": "modelo-tabloide",
- "titulo": "OFERTA 23 A 29 DE NOVEMBRO",
+ "titulo": "OFERTAS 30 NOVEMBRO A 6 DEZEMBRO",
  "semana": "",
- "exportado_em": "2026-11-21T13:45:55",
+ "exportado_em": "2026-11-28T11:29:08",
  "secoes": [
   {
-   "rotulo": "OFERTA 23 A 29 DE NOVEMBRO",
+   "rotulo": "OFERTAS 30 NOVEMBRO A 6 DEZEMBRO",
    "itens": [
     {
-     "produto": "AÇÚCAR CRISTAL SOLIMAR 5KG",
-     "preco": "R$ 14,99"
+     "produto": "ABS SYM TOTAL PROTECT SUAVE C/ABAS C/8 ROXO",
+     "preco": "R$ 2,69"
     },
     {
-     "produto": "ACUCAR REFINADO UNIAO 1KG",
+     "produto": "AÇÚCAR CRISTAL SANTA ISABEL 5KG",
+     "preco": "R$ 15,39"
+    },
+    {
+     "produto": "ACUCAR REFINADO CARAVELAS 1KG",
+     "preco": "R$ 3,49"
+    },
+    {
+     "produto": "AGUA SANITARIA TRIEX 2L",
      "preco": "R$ 3,79"
     },
     {
-     "produto": "AGUA SANITARIA CANDURA 2L",
-     "preco": "R$ 4,99"
+     "produto": "AGUARDENTE VELHO BARREIRO 910ML",
+     "preco": "R$ 13,90"
     },
     {
-     "produto": "AGUARDENTE 51 PIRASSUNUNGA 965ML",
-     "preco": "R$ 12,90"
+     "produto": "AMACIANTE ROUPA YPE CONC ALQUIMIA 500ML FRAGRANCIAS",
+     "preco": "R$ 8,29"
     },
     {
-     "produto": "APARELHO PRESTOBARBA ULTRAGRIP MOVEL C/2",
-     "preco": "R$ 5,99"
+     "produto": "ARROZ DANATA 5KG BRANCO",
+     "preco": "R$ 21,90"
     },
     {
-     "produto": "ARROZ SABOROSO 5KG BRANCO",
-     "preco": "R$ 20,90"
+     "produto": "BISCOITO BONO 90G SABORES",
+     "preco": "R$ 2,19"
     },
     {
-     "produto": "AZEITE COMPOSTO 40% OLIVA ESSENCIA PORTUGUESA VD 500ML",
-     "preco": "R$ 12,90"
+     "produto": "BISCOITO COOKIES NESTLE 60G SABORES",
+     "preco": "R$ 2,49"
     },
     {
-     "produto": "BISCOITO DALLAS 345G LAMINADAS",
-     "preco": "R$ 4,19"
+     "produto": "BISCOITO DALLAS 345G LAMINADAS SABORES",
+     "preco": "R$ 3,99"
     },
     {
-     "produto": "BISCOITO TUCS 320G SALGADINHOS CROCANTES",
-     "preco": "R$ 4,99"
+     "produto": "BISCOITO PASSATEMPO REC 130G",
+     "preco": "R$ 1,99"
     },
     {
-     "produto": "COND SEDA",
-     "preco": "R$ 12,99"
+     "produto": "BISCOITO RECHEADO DALLAS PANTANITOS 130G CHOCOLATE/COCO",
+     "preco": "R$ 2,10"
     },
     {
-     "produto": "CREME DENTAL SORRISO TRIPLA 70G LIMPEZA COMPLETA",
-     "preco": "R$ 2,99"
+     "produto": "CAFÉ ITUANO 500G",
+     "preco": "R$ 17,99"
     },
     {
-     "produto": "CREME SKALA 1KGFRAGRANCIAS",
-     "preco": "R$ 9,59"
+     "produto": "CHA MATTE LEAO 250G ORIGINAL",
+     "preco": "R$ 6,29"
     },
     {
-     "produto": "DESINFETANTE SUPREMA 2L FRAGRANCIAS",
-     "preco": "R$ 5,19"
+     "produto": "COCO RALADO DUCOCO 100G UMIDO E ADOCADO",
+     "preco": "R$ 3,89"
     },
     {
-     "produto": "DESODORANTE AERO REXONA 150ML FRAGRANCIAS",
-     "preco": "R$ 14,29"
+     "produto": "CREME DE AVELA DA TERRINHA 140G",
+     "preco": "R$ 9,49"
     },
     {
-     "produto": "DETERGENTE LIQ TRIEX 500ML FRAGRANCIAS",
-     "preco": "R$ 1,79"
-    },
-    {
-     "produto": "ESPONJA DE ACO BOMBRIL 45G C/ 6",
-     "preco": "R$ 2,29"
-    },
-    {
-     "produto": "EXTRATO TOMATE ELEFANTE POTE 300G",
-     "preco": "R$ 7,49"
-    },
-    {
-     "produto": "FARINHA DE TRIGO DONA BENTA 1KG TRADICIONAL",
-     "preco": "R$ 4,69"
+     "produto": "FARINHA DE TRIGO TRES COROAS 1KG",
+     "preco": "R$ 2,89"
     },
     {
      "produto": "FEIJÃO CARIOCA DAKI 1KG",
      "preco": "R$ 7,99"
     },
     {
-     "produto": "FILTRO DE PAPEL MELITTA 103 C/30",
-     "preco": "R$ 3,79"
+     "produto": "FIGO EM CALDA SCHRAMM 850G",
+     "preco": "R$ 14,90"
     },
     {
-     "produto": "INSETICIDA SBP 380ML EMB ECON FRAGRANCIAS",
-     "preco": "R$ 15,99"
-    },
-    {
-     "produto": "LAMPADA OUROLUX HALOGENA 70W 127V",
-     "preco": "R$ 4,79"
-    },
-    {
-     "produto": "LAVA ROUPAS PO BRILHANTE CX 2.2KG LIMPEZA TOTAL TAM FAMILIA",
+     "produto": "FRALDA MILI JUMBINHO TAMANHOS",
      "preco": "R$ 19,90"
+    },
+    {
+     "produto": "GELATINA DR OETKER 20G SABORES",
+     "preco": "R$ 1,69"
+    },
+    {
+     "produto": "LEITE CONDENSADO MARAJOARA 395G TP",
+     "preco": "R$ 5,49"
+    },
+    {
+     "produto": "LEITE DE COCO SOCOCO 200ML TRADICIONAL",
+     "preco": "R$ 5,89"
     },
     {
      "produto": "MACARRÃO GALO 500G EXCETO NINHO/ALETRIA/GRAVATA/RIGATONE",
      "preco": "R$ 3,39"
     },
     {
-     "produto": "MAIONESE SOYA CASEIRA 500G",
-     "preco": "R$ 4,99"
+     "produto": "MAIONESE PRIMOR 500G",
+     "preco": "R$ 5,19"
     },
     {
-     "produto": "MILHO VERDE PREDILECTA 170G LATA",
+     "produto": "MILHO VERDE QUERO 170G LATA",
      "preco": "R$ 2,89"
     },
     {
-     "produto": "MOLHO DE TOMATE PREDILECTA SACHE 300G TRADICIONAL",
-     "preco": "R$ 1,49"
+     "produto": "MISTURA PARA BOLO RENATA 400G SABORES (EXCETO CHOC/ BRIGADEIRO)",
+     "preco": "R$ 4,79"
     },
     {
      "produto": "OLEO DE SOJA COAMO PET 900ML",
      "preco": "R$ 7,29"
     },
     {
-     "produto": "PAO DE MEL PANCO 500G",
-     "preco": "R$ 8,99"
+     "produto": "PAPEL TOALHA BIANCO MILI C/2",
+     "preco": "R$ 3,49"
     },
     {
-     "produto": "PAPEL HIGIENICO FAMILIAR FOLHA DUPLA 30M LV12 PG11",
-     "preco": "R$ 14,90"
-    },
-    {
-     "produto": "REFRIGERANTE GUARANA ANTARCTICA 1,5L TRAD / ZERO",
-     "preco": "R$ 5,99"
-    },
-    {
-     "produto": "ROSQUINHA PANCO 500G COCO",
-     "preco": "R$ 7,19"
+     "produto": "PESSEGO EM CALDA SCHRAMM 450G METADE",
+     "preco": "R$ 10,90"
     },
     {
      "produto": "SABONETE LUX BOTANICALS 85G FRAGRANCIAS",
      "preco": "R$ 2,09"
     },
     {
-     "produto": "SHAMPOO SEDA 300ML FRAGRANCIAS",
-     "preco": "R$ 8,99"
+     "produto": "SALSICHA PERDIGAO QUILO",
+     "preco": "R$ 7,99"
     },
     {
-     "produto": "TEMPERO SAZÓN FLOPPY 60G",
-     "preco": "R$ 4,99"
+     "produto": "SUCO PO TANG 18G SABORES",
+     "preco": "R$ 1,09"
     },
     {
-     "produto": "TOALHA DE PAPEL YURI FIT C/2",
-     "preco": "R$ 3,69"
+     "produto": "TOALHAS UMEDECIDAS C/ TAMPA MEU NENE C/140",
+     "preco": "R$ 7,90"
+    },
+    {
+     "produto": "VINHO CHALISE 750ML TIPOS",
+     "preco": "R$ 10,99"
     }
    ]
   },
   {
-   "rotulo": "SEGUNDA 23 DE NOVEMBRO",
+   "rotulo": "SEGUNDA 30 DE NOVEMBRO",
    "itens": [
     {
-     "produto": "ACHOCOLATADO EM PO TODDY 200G",
-     "preco": "R$ 6,19"
+     "produto": "ACHOCOLATADO EM PO NESCAU 350G",
+     "preco": "R$ 7,69"
     },
     {
-     "produto": "ADOCANTE ZERO CAL 200ML SACARINA",
-     "preco": "R$ 13,39"
+     "produto": "BEB LACTEA ITALAC WHEY ZERO LACTOSE 250ML",
+     "preco": "R$ 5,99"
     },
     {
-     "produto": "BEBIDA LACTEA ITALAKINHO 200ML CHOCOLATE",
-     "preco": "R$ 1,29"
+     "produto": "BEBIDA LACTEA ITALAKINHO 200ML MORANGO",
+     "preco": "R$ 1,69"
+    },
+    {
+     "produto": "BEBIDA LACTEA ITALAKINHO 200ML VITAMINA DE FRUTAS",
+     "preco": "R$ 1,69"
+    },
+    {
+     "produto": "BEBIDA LACTEA MARAJOARA CHOCOTYNHO 150ML CHOCOLATE",
+     "preco": "R$ 0,89"
     },
     {
      "produto": "BEBIDA LACTEA PIRACANJUBA WHEY ZERO LACTOSE 250MLSABORES",
      "preco": "R$ 6,99"
     },
     {
-     "produto": "BISCOITO ADRIA 170G CREAM CRACKER FOLHATA MANTEIGA",
-     "preco": "R$ 3,29"
-    },
-    {
-     "produto": "BISCOITO CLUB SOCIAL 144G ORIGINAL",
-     "preco": "R$ 5,19"
-    },
-    {
-     "produto": "BISCOITO COOKIES NESTLE 60G SABORES",
-     "preco": "R$ 2,69"
-    },
-    {
-     "produto": "BISCOITO MARILAN PIT STOP 137G ORIGINAL",
-     "preco": "R$ 3,99"
-    },
-    {
-     "produto": "BISCOITO RECHEADO PASSATEMPO 130G CHOCOLATE",
-     "preco": "R$ 1,99"
+     "produto": "BISCOITO MARILAN 300G LAMINADOS",
+     "preco": "R$ 4,99"
     },
     {
      "produto": "BISCOITO RECHEADO VISCONTI 73G CHOCOLATE/ MORANGO",
      "preco": "R$ 1,49"
     },
     {
-     "produto": "BISCOITO WAFER FAZENDINHA 95G SABORES",
-     "preco": "R$ 2,49"
+     "produto": "BISCOITO TUCS 100G SABORES",
+     "preco": "R$ 1,79"
     },
     {
      "produto": "CAFE MELITTA VACUO 500G TRADICIONAL/EXTRA FORTE",
-     "preco": "R$ 23,40"
+     "preco": "R$ 21,90"
     },
     {
-     "produto": "CAFE SOLUVEL PILAO SACHE 40G COADO",
-     "preco": "R$ 4,39"
+     "produto": "CAFE SOLUVEL NESCAFE SACHE 40G EXTRA FORTE/MATINAL SUAVE",
+     "preco": "R$ 6,29"
     },
     {
-     "produto": "CHAMYTO 450G",
-     "preco": "R$ 5,99"
+     "produto": "CEREAL SUCRILHOS KELLOGGS LV240G PG200G ORIGINAL",
+     "preco": "R$ 7,49"
+    },
+    {
+     "produto": "IO IO MIX 41,9G CHOCOLATE/ DUAL",
+     "preco": "R$ 3,89"
     },
     {
      "produto": "LEITE UHT 1L HERCULES OU SHEFA",
@@ -225,12 +217,16 @@
      "preco": "R$ 36,90"
     },
     {
-     "produto": "MUCILON SACHE 360G SABORES",
-     "preco": "R$ 10,90"
+     "produto": "PANETONE BAUDUCCO 400G",
+     "preco": "R$ 22,90"
     },
     {
      "produto": "PANETONE DI SANTO 400",
      "preco": "R$ 10,99"
+    },
+    {
+     "produto": "PAO DE MEL PANCO 500G",
+     "preco": "R$ 8,99"
     },
     {
      "produto": "PÃO FRANCÊS KG",
@@ -241,459 +237,355 @@
      "preco": "R$ 2,99"
     },
     {
-     "produto": "REQUEIJÃO VIGOR CREMOSO TRADICIONAL/LIGHT 200G",
-     "preco": "R$ 7,90"
-    },
-    {
-     "produto": "SUCO INTEGRAL AURORA UVA TP 1,5L TINTO",
-     "preco": "R$ 15,49"
+     "produto": "ROSQUINHA PANCO 500G COCO",
+     "preco": "R$ 7,19"
     },
     {
      "produto": "TAPIOCA PRONTA DA TERRINHA 500G",
-     "preco": "R$ 5,99"
+     "preco": "R$ 5,49"
+    }
+   ]
+  },
+  {
+   "rotulo": "QUARTA 22 DEZEMBRO",
+   "itens": [
+    {
+     "produto": "AMACIANTE ROUPA YPE 2L FRAGRANCIAS",
+     "preco": "R$ 7,99"
     },
     {
-     "produto": "TORRADA BAUDUCCO 142G TRADICIONAL / SABORES",
+     "produto": "AROMATIZANTE COALA 120ML FRAGRANCIAS",
+     "preco": "R$ 11,59"
+    },
+    {
+     "produto": "CREME DENTAL COLGATE TOTAL 90G ORIGINAL MINT",
+     "preco": "R$ 9,90"
+    },
+    {
+     "produto": "DESINFETANTE SUPREMA 2L FLORES DO CAMPO",
+     "preco": "R$ 5,29"
+    },
+    {
+     "produto": "DESINFETANTE YPE BAK 500ML FRAGRANCIAS",
+     "preco": "R$ 2,89"
+    },
+    {
+     "produto": "DETERGENTE LIQ MINUANO 500ML FRAGRANCIAS",
+     "preco": "R$ 1,89"
+    },
+    {
+     "produto": "HASTES FLEXIVEIS TOPZ C/75",
+     "preco": "R$ 2,20"
+    },
+    {
+     "produto": "INSETICIDA AERO RAID 420ML FRAGRANCIAS",
+     "preco": "R$ 17,99"
+    },
+    {
+     "produto": "LAVA ROUPAS LIQ TIXAN YPE 900ML MACIEZ/PRIMAVERA",
+     "preco": "R$ 9,90"
+    },
+    {
+     "produto": "LAVA ROUPAS PO OMO 800G TODO CICLO",
+     "preco": "R$ 9,90"
+    },
+    {
+     "produto": "LAVA ROUPAS PO TIXAN YPE CX 2,2 KG PRIMAVERA EMB ECO",
+     "preco": "R$ 16,79"
+    },
+    {
+     "produto": "LIMPADOR MULTIUSO SUPREMA 500ML FRAGRANCIAS",
+     "preco": "R$ 2,79"
+    },
+    {
+     "produto": "LIMPADOR MULTIUSO UAU 500ML FRAGRANCIAS",
+     "preco": "R$ 3,99"
+    },
+    {
+     "produto": "PAPEL HIGIENICO NEVE FOLHA DUPLA LV12 PG11 30M",
+     "preco": "R$ 19,90"
+    },
+    {
+     "produto": "REMOVEDOR SUPREMA REMOVE MAIS 1L FRAGRANCIAS",
+     "preco": "R$ 8,99"
+    },
+    {
+     "produto": "SABAO PEDRA YPE PERF 800G C/5 PERFUMADO",
+     "preco": "R$ 11,59"
+    },
+    {
+     "produto": "VASSOURA CONDOR SINTETICA SEM CABO",
      "preco": "R$ 4,99"
     }
    ]
   },
   {
-   "rotulo": "QUARTA 25 DE NOVEMBRO                                   QUARTA NOBRE",
-   "itens": [
-    {
-     "produto": "ACHOCOLATADO EM PÓ NESCAU 350G",
-     "preco": ""
-    },
-    {
-     "produto": "AMACIANTE ROUPA COALA CONC 1L CHA BRANCO\\ORQUIDEA NEGRA",
-     "preco": ""
-    },
-    {
-     "produto": "BATATA PALHA DA TERRINHA 100G TRADICIONAL",
-     "preco": ""
-    },
-    {
-     "produto": "BOM AR AERO 360ML FRAGRANCIAS",
-     "preco": ""
-    },
-    {
-     "produto": "CACHACA VELHO BARREIRO 350ML",
-     "preco": ""
-    },
-    {
-     "produto": "CERVEJA CRYSTAL 350ML C/12",
-     "preco": ""
-    },
-    {
-     "produto": "CERVEJA HEINEKEN PURO MALTE LT 350ML CX C/12",
-     "preco": ""
-    },
-    {
-     "produto": "CERVEJA SKOL PILSEN LT 350ML CX C/12",
-     "preco": ""
-    },
-    {
-     "produto": "CHOCOLATE LACTA BIS 100,8G",
-     "preco": ""
-    },
-    {
-     "produto": "COCA-COLA ORIGINAL 2L",
-     "preco": ""
-    },
-    {
-     "produto": "CONTRA FILÉ BOV KG",
-     "preco": ""
-    },
-    {
-     "produto": "COPO AMERICANO 180ML CX C/24",
-     "preco": "R$ 30,00"
-    },
-    {
-     "produto": "COSTELAO BOVINO",
-     "preco": ""
-    },
-    {
-     "produto": "COXAO MOLE BOV",
-     "preco": ""
-    },
-    {
-     "produto": "COXINHA DA ASA DE FRANGO KG",
-     "preco": ""
-    },
-    {
-     "produto": "DESINFETANTE BÚFALO 2L",
-     "preco": ""
-    },
-    {
-     "produto": "FRALDA MILI JUMBINHO TAMANHOS",
-     "preco": "R$ 19,99"
-    },
-    {
-     "produto": "FRANGO INTEIRO KG",
-     "preco": ""
-    },
-    {
-     "produto": "LAVA ROUPAS PO OMO 700G LAVAGEM PERFEITA",
-     "preco": ""
-    },
-    {
-     "produto": "LAVA ROUPAS PO OMO 800G LAVAGEM PERFEITA",
-     "preco": "R$ 10,90"
-    },
-    {
-     "produto": "LEITE UHT 1L",
-     "preco": "R$ 4,39"
-    },
-    {
-     "produto": "LIMPADOR CASA E PERFUME 1L FRAGRANCIAS",
-     "preco": "R$ 8,99"
-    },
-    {
-     "produto": "LIMPADOR MULTIUSO UAU PERFUMES 480ML FRAGRANCIAS",
-     "preco": ""
-    },
-    {
-     "produto": "LIMPADOR MULTIUSO VEJA 500ML",
-     "preco": ""
-    },
-    {
-     "produto": "LINGUIÇA TOSCANA SADIA",
-     "preco": ""
-    },
-    {
-     "produto": "MAIONESE SOYA CASEIRA 500G",
-     "preco": ""
-    },
-    {
-     "produto": "MUÇARELA PEÇA OU PEDAÇO KG",
-     "preco": ""
-    },
-    {
-     "produto": "MÚSCULO BOV KG",
-     "preco": ""
-    },
-    {
-     "produto": "PERNIL SUÍNO C/OSSO KG",
-     "preco": ""
-    },
-    {
-     "produto": "REMOVEDOR TRIEX 1LT FRAGRANCIAS",
-     "preco": ""
-    },
-    {
-     "produto": "SABAO PEDRA YPE 800G NEUTRO C/5 160X5",
-     "preco": ""
-    },
-    {
-     "produto": "SABONETE DOVE 90G ORIGINAL",
-     "preco": ""
-    },
-    {
-     "produto": "SABONETE PHEBO 90G FRAGRANCIAS",
-     "preco": ""
-    },
-    {
-     "produto": "SABONETE POMPOM 70G FRAGRANCIAS",
-     "preco": "R$ 2,99"
-    },
-    {
-     "produto": "SACO DE LIXO REAL 50L REFORCADO C/ 10 UNIDADES",
-     "preco": "R$ 7,99"
-    },
-    {
-     "produto": "SALGADINHO TORCIDA 60G SABORES",
-     "preco": ""
-    },
-    {
-     "produto": "VASSOURA ALKLIN C/ CABO",
-     "preco": ""
-    },
-    {
-     "produto": "VASSOURA BETTANIN NOVICA ORIGINAL",
-     "preco": "R$ 14,90"
-    },
-    {
-     "produto": "VINHO DOM BOSCO 750ML TINTO SUAVE",
-     "preco": ""
-    }
-   ]
-  },
-  {
-   "rotulo": "QUINTA 26 DE NOVEMBRO",
+   "rotulo": "QUINTA 3 DE DEZEMBRO",
    "itens": [
     {
      "produto": "ACÉM SEM OSSO BOV KG",
-     "preco": ""
+     "preco": "R$ 39,25"
     },
     {
-     "produto": "ALCATRA C/MAMINHA BOV KG",
-     "preco": ""
+     "produto": "ALCATRA C/ MAMINHA BOV KG",
+     "preco": "R$ 57,99"
+    },
+    {
+     "produto": "ASA DE FRANGO",
+     "preco": "R$ 14,99"
     },
     {
      "produto": "AUROGGETS AURORA KG",
-     "preco": ""
+     "preco": "R$ 22,90"
     },
     {
      "produto": "BISTECA DO SETE BOV KG",
-     "preco": ""
+     "preco": "R$ 34,10"
     },
     {
      "produto": "BISTECA SUÍNA KG",
+     "preco": "R$ 15,29"
+    },
+    {
+     "produto": "CERVEJA BRAHMA CHOPP LT 350ML C/12",
      "preco": ""
     },
     {
-     "produto": "BUCHO BOV KG",
-     "preco": ""
-    },
-    {
-     "produto": "CERVEHA BRAHMA 350ML PECK C/12",
-     "preco": ""
-    },
-    {
-     "produto": "CERVEJA CRYSTAL 350ML C/12",
-     "preco": ""
-    },
-    {
-     "produto": "CERVEJA HEINEKEN 350ML PECK C/12",
-     "preco": ""
+     "produto": "CERVEJA CRYSTAL PILSEN LT 350ML C/12",
+     "preco": "R$ 26,28"
     },
     {
      "produto": "CERVEJA SKOL 350ML PECK C/12",
      "preco": ""
     },
     {
-     "produto": "COCA COLA 2L",
-     "preco": ""
-    },
-    {
-     "produto": "CONTRA FILÉ BOV KG",
-     "preco": ""
+     "produto": "COSTELAO BOVINO KG",
+     "preco": "R$ 29,30"
     },
     {
      "produto": "COSTELINHA SUÍNA KG",
-     "preco": ""
+     "preco": "R$ 22,40"
     },
     {
      "produto": "COXA C/ SOBRECOXA DE FRANGO KG",
-     "preco": ""
+     "preco": "R$ 8,99"
     },
     {
      "produto": "COXÃO MOLE BOV KG",
-     "preco": ""
-    },
-    {
-     "produto": "FIGADO BOVINO KG",
-     "preco": ""
+     "preco": "R$ 51,90"
     },
     {
      "produto": "FILÉ DE FRANGO KG EXCETO STROGONOFF",
-     "preco": ""
+     "preco": "R$ 18,90"
     },
     {
      "produto": "FILÉ DE MERLUZA KG",
-     "preco": ""
+     "preco": "R$ 37,90"
     },
     {
      "produto": "FRANGO INTEIRO KG",
-     "preco": ""
-    },
-    {
-     "produto": "LINGUIÇA TOSCANA SADIA KG",
-     "preco": ""
-    },
-    {
-     "produto": "MOELA DE FRANGO KG",
-     "preco": ""
+     "preco": "R$ 8,49"
     },
     {
      "produto": "MÚSCULO BOV KG",
-     "preco": ""
+     "preco": "R$ 39,25"
     },
     {
-     "produto": "PALETA BOV",
-     "preco": ""
+     "produto": "PALETA BOV KG",
+     "preco": "R$ 43,99"
     },
     {
      "produto": "PALETA SUINA C/OSSO",
-     "preco": ""
+     "preco": "R$ 13,39"
     },
     {
      "produto": "PANCETA SUINA KG",
-     "preco": ""
-    },
-    {
-     "produto": "PANETONE DI SANTO 400+C116:D146",
-     "preco": ""
+     "preco": "R$ 17,95"
     },
     {
      "produto": "PATINHO BOVINO KG",
-     "preco": ""
+     "preco": "R$ 49,99"
     },
     {
-     "produto": "PEITO DE FRANGO C/OSSO KG",
-     "preco": ""
+     "produto": "PEITO DE FRANGO C/OSSO",
+     "preco": "R$ 12,49"
+    },
+    {
+     "produto": "PERNIL SUÍNO C/OSSO KG",
+     "preco": "R$ 13,39"
     },
     {
      "produto": "PICANHA BOV",
-     "preco": ""
+     "preco": "R$ 66,90"
     },
     {
      "produto": "PONTA DE ALCATRA BOV KG",
-     "preco": ""
+     "preco": "R$ 48,90"
     },
     {
-     "produto": "REFRIGERANTE GUARANÁ KUAT 2L",
-     "preco": ""
+     "produto": "REFRIGERANTE COCA COLA 2L ORIGINAL",
+     "preco": "R$ 9,90"
     },
     {
-     "produto": "SALSICHA SADIA KG",
-     "preco": ""
+     "produto": "REFRIGERANTE R SCHINCARIOL 2L SABORES",
+     "preco": "R$ 5,49"
     },
     {
-     "produto": "TAMPICO 2 L",
-     "preco": ""
+     "produto": "SUCO TAMPICO 2L FRUTAS CITRICAS",
+     "preco": "R$ 7,29"
     }
    ]
   },
   {
-   "rotulo": "FINAL DE SEMANA 26 A 29 DE NOVEMBRO",
+   "rotulo": "FINAL DE SEMANA 4 A 6 DEZEMBRO",
    "itens": [
     {
      "produto": "ACÉM SEM OSSO BOV KG",
-     "preco": ""
+     "preco": "R$ 38,99"
+    },
+    {
+     "produto": "AGUA DE COCO PURO COCO 1L MAGUARY",
+     "preco": "R$ 7,79"
     },
     {
      "produto": "ALCATRA C/ MAMINHA BOV KG",
-     "preco": ""
+     "preco": "R$ 57,90"
     },
     {
      "produto": "ASINHA DE FRANGO KG",
-     "preco": ""
+     "preco": "R$ 14,90"
     },
     {
-     "produto": "AZEITE GALLO CLASSICO VD 500ML EXTRA VIRGEM",
-     "preco": ""
+     "produto": "AZEITE GALO EXTRA VIRGEM 500ML",
+     "preco": "R$ 25,99"
     },
     {
      "produto": "BATATA CONGELADA 2KG MAIS BATATA",
-     "preco": ""
+     "preco": "R$ 23,90"
+    },
+    {
+     "produto": "BATATA PRINGLES 104G SABORES",
+     "preco": "R$ 9,90"
+    },
+    {
+     "produto": "BEBIDA APEROL 750ML",
+     "preco": "R$ 44,90"
     },
     {
      "produto": "BISTECA SUÍNA KG",
-     "preco": ""
+     "preco": "R$ 14,90"
     },
     {
      "produto": "BOMBONS NESTLÉ ESPECIALIDADES 251G",
      "preco": "R$ 10,99"
     },
     {
-     "produto": "CERVEJA CRYSTAL 350ML C/12",
-     "preco": ""
+     "produto": "CERVEJA HEINEKEN 350ML LATA CX C/12",
+     "preco": "R$ 56,28"
     },
     {
-     "produto": "CERVEJA IMPERIO PURO MALTE 350ML C/12",
-     "preco": ""
+     "produto": "CERVEJA HEINEKEN LN 330 ML C/6",
+     "preco": "R$ 35,94"
     },
     {
-     "produto": "CERVEJA ORIGINAL PILSEN LT 350ML CX C/12",
-     "preco": ""
+     "produto": "CERVEJA ITAIPAVA 350ML C/12",
+     "preco": "R$ 30,00"
     },
     {
-     "produto": "CERVEJA SKOL PILSEN LT 350ML CX C/12",
-     "preco": ""
-    },
-    {
-     "produto": "CHOCOTONE BAUDUCCO",
-     "preco": "R$ 22,90"
+     "produto": "CHAMPAGNE ESPUMA DE PRATA 660ML BRANCO",
+     "preco": "R$ 15,99"
     },
     {
      "produto": "COSTELÃO BOV KG",
-     "preco": ""
+     "preco": "R$ 28,99"
     },
     {
      "produto": "COXÃO MOLE BOV KG",
-     "preco": ""
+     "preco": "R$ 50,90"
     },
     {
-     "produto": "CREME DE LEITE NESTLE 300G LATA",
-     "preco": ""
-    },
-    {
-     "produto": "EMPANADO SEARA PRESUNTO/QUEIJO SEARA",
-     "preco": ""
+     "produto": "ENERGEICO LONG ONE 2L",
+     "preco": "R$ 4,99"
     },
     {
      "produto": "FAROFA YOKI TRADICIONAL 400G",
-     "preco": "R$ 5,99"
+     "preco": "R$ 5,29"
     },
     {
      "produto": "FRALDINHA BOV KG",
-     "preco": ""
+     "preco": "R$ 49,90"
     },
     {
-     "produto": "HAMBURGUER TEXAS 672G CAIXETA",
-     "preco": ""
+     "produto": "LACTA BIS 100.8G ORIGINAL/BRANCO",
+     "preco": "R$ 6,29"
     },
     {
-     "produto": "LEITE CONDENSADO NESTLE MOCA 395G LT INTEGRAL",
-     "preco": "R$ 7,99"
+     "produto": "LEITE CONDENSADO PIRACANJUBA 395G",
+     "preco": "R$ 5,99"
     },
     {
-     "produto": "LINGUIÇA TOSCANA PERDIGAO NA BRASA KG",
-     "preco": ""
+     "produto": "LINGUIÇA TOSCANA AURORA KG",
+     "preco": "R$ 18,50"
     },
     {
      "produto": "MAIONESE HELLMANNS 500G ORIGINAL",
-     "preco": "R$ 8,79"
+     "preco": "R$ 8,69"
     },
     {
      "produto": "PALETA BOV KG",
-     "preco": ""
+     "preco": "R$ 44,30"
     },
     {
      "produto": "PANCETA SUÍNA KG",
-     "preco": ""
-    },
-    {
-     "produto": "PANETONE BAUDUCCO 400G",
-     "preco": "R$ 22,90"
+     "preco": "R$ 17,90"
     },
     {
      "produto": "PATINHO BOVINO KG",
-     "preco": ""
+     "preco": "R$ 49,90"
     },
     {
      "produto": "PERNIL SUÍNO C/OSSO KG",
-     "preco": ""
+     "preco": "R$ 16,90"
     },
     {
      "produto": "PICANHA BOV",
-     "preco": ""
+     "preco": "R$ 66,90"
     },
     {
      "produto": "PONTA DE ALCATRA BOV KG",
-     "preco": ""
+     "preco": "R$ 48,90"
     },
     {
      "produto": "REFRIGERANTE COCA COLA ORIGINAL 2L",
-     "preco": ""
+     "preco": "R$ 9,90"
     },
     {
      "produto": "REFRIGERANTE SUKITA SABORES 2L",
-     "preco": ""
+     "preco": "R$ 5,59"
+    },
+    {
+     "produto": "REFRIGERANTE XERETA 2L",
+     "preco": "R$ 4,59"
+    },
+    {
+     "produto": "SUCO DAFRUTA CONCENTRADO 500ML MARACUJA",
+     "preco": "R$ 6,79"
     },
     {
      "produto": "SUCO FRUTARKS 1500ML",
-     "preco": ""
+     "preco": "R$ 6,29"
     },
     {
-     "produto": "VODKA ASKOV TRADICIONAL 900ML",
-     "preco": ""
+     "produto": "SUCO INTEGRAL AURORA UVA TP 1,5L TINTO",
+     "preco": "R$ 15,49"
     },
     {
      "produto": "WHISKY WHITE HORSE 1L",
-     "preco": ""
+     "preco": "R$ 59,90"
+    },
+    {
+     "produto": "WHISQUE WHITE HORSE 1L",
+     "preco": "R$ 51,90"
     }
    ]
   }
